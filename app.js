@@ -4,8 +4,16 @@ const res = require('express/lib/response');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const app = express();
+const session = require('express-session');
 app.use(express.static('public'));
 
+app.use(
+  session({
+    secret: 'my_secret_key',
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
@@ -54,7 +62,15 @@ app.post('/datainput', (req, res) =>{
 });
 
 app.get('/showdata', (req, res) =>{
-    res.render('showactivities.ejs');
+    connection.query(
+        'SELECT * FROM activities',
+        [],
+        (error, results) =>{
+            console.log(results);
+            // console.log(results[0]['id']);
+            res.render('showactivities.ejs', {results: results});
+        }
+    );
 })
 
 app.listen(3000);

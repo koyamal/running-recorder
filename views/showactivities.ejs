@@ -6,8 +6,20 @@
     <title>running-recorder</title>
     <script src="/test/dist/chart.js"></script>
   </head>
-  <canvas id="myChart" width="400" height="400"></canvas>
-  <script src="/js/fig.js"></script>
-  
-  
+  <h1>
+      hello
+  </h1>
+  <div>
+    <% const test =  results[2]['date'] %>
+    <% console.log(test) %>
+    <canvas id="myChart" height="40"></canvas>
+    <div id="mydiv" data-tests=<%= test %>>
+    </div>
+    <script>
+    var test = document.getElementById('mydiv').dataset.tests
+    console.log(test);
+    </script>
+    <script src="/js/fig.js"></script>
+  </div>
+
 </html>
