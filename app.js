@@ -4,6 +4,7 @@ const res = require('express/lib/response');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const app = express();
+app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -51,5 +52,9 @@ app.post('/datainput', (req, res) =>{
           }
     );
 });
+
+app.get('/showdata', (req, res) =>{
+    res.render('showactivities.ejs');
+})
 
 app.listen(3000);
