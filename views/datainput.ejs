@@ -10,17 +10,17 @@
     <form action="/datainput" method="post">
       <div>
         日付：
-        <input type="date" name="date"></input>
+        <input type="date" name="date" required="required"></input>
       </div>
       <div>
         距離：
-        <input type="number" name="dist" step="0.01" min="0" max="150">(km)
+        <input type="number" name="dist" step="0.01" min="0" max="150" required="required">(km)
       </div>
       <div>
         タイム：
         <input type="number" name="hour" min="0" max="60">時間
-        <input type="number" name="min" min="0" max="60">分
-        <input type="number" name="sec" min="0" max="60">秒
+        <input type="number" name="min" min="0" max="60" required="required">分
+        <input type="number" name="sec" min="0" max="60" required="required">秒
       </div>
       <div>
         心拍(平均)：
