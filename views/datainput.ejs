@@ -7,6 +7,33 @@
   </head>
   <h1>Data input page</h1>
   <div>
+    <form action="/datainput" method="post">
+      <div>
+        日付：
+        <input type="date" name="date"></input>
+      </div>
+      <div>
+        距離：
+        <input type="number" name="dist" step="0.01" min="0" max="150">(km)
+      </div>
+      <div>
+        タイム：
+        <input type="number" name="hour" min="0" max="60">時間
+        <input type="number" name="min" min="0" max="60">分
+        <input type="number" name="sec" min="0" max="60">秒
+      </div>
+      <div>
+        心拍(平均)：
+        <input type="number" name="hb_ave" min="0" max="300">(bpm)
+      </div>
+      <div>
+        心拍(最大)：
+        <input type="number" name="hb_max" min="0" max="300">(bpm)
+      </div>
+      <div>
+        <input type="submit" value="submit">
+      </div>
+    </form>
     <a href="/" >ホーム</a>
   </div>
   <a></a>
