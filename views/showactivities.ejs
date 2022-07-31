@@ -6,19 +6,41 @@
     <title>running-recorder</title>
     <script src="/test/dist/chart.js"></script>
   </head>
-  <h1>
-      hello
-  </h1>
   <div>
-    <% const test =  results[2]['date'] %>
-    <% console.log(test) %>
-    <canvas id="myChart" height="40"></canvas>
-    <div id="mydiv" data-tests=<%= test %>>
-    </div>
+    <% const activities =  results %>
+    <% console.log(activities); %>
+    <div id="count" data-act=<%- activities.length %>></div>
     <script>
-    var test = document.getElementById('mydiv').dataset.tests
-    console.log(test);
+        const numAct = document.getElementById("count").dataset.act;
     </script>
+
+    <script>
+        const activityList = []
+    </script>
+    <% for(let i = 0; i < activities.length; i++){ %>
+        <div id=<%- "date" + i%> data-act=<%- activities[i]['date'].getDate() %>></div>
+        <div id=<%- "month" + i%> data-act=<%- activities[i]['date'].getMonth() + 1 %>></div>
+        <div id=<%- "year" + i%> data-act=<%- activities[i]['date'].getFullYear() %>></div>
+        <div id=<%- "hour" + i%> data-act=<%- activities[i]['hour'] %>></div>
+        <div id=<%- "min" + i%> data-act=<%- activities[i]['min'] %>></div>
+        <div id=<%- "sec" + i%> data-act=<%- activities[i]['sec'] %>></div>
+        <div id=<%- "hb_ave" + i%> data-act=<%- activities[i]['hb_ave'] %>></div>
+        <div id=<%- "hb_max" + i%> data-act=<%- activities[i]['hb_max'] %>></div>
+    <% }; %> 
+    <script>
+        for(let i = 0; i < numAct; i++){
+            activityList.push( {date: document.getElementById('date'+ i).dataset.act,
+                          month: document.getElementById('month' + i).dataset.act,
+                          year: document.getElementById('year' + i).dataset.act,
+                          hour: document.getElementById('hour' + i).dataset.act,
+                          min: document.getElementById('min' + i).dataset.act,
+                          sec: document.getElementById('sec' + i).dataset.act,
+                          hb_ave: document.getElementById('hb_ave' + i).dataset.act,
+                          hb_max: document.getElementById('hb_max' + i).dataset.act})
+        };
+    </script>
+    <canvas id="myChart" height="40"></canvas>
+
     <script src="/js/fig.js"></script>
   </div>
 
