@@ -24,6 +24,7 @@
         <div id=<%- "hour" + i%> data-act=<%- activities[i]['hour'] %>></div>
         <div id=<%- "min" + i%> data-act=<%- activities[i]['min'] %>></div>
         <div id=<%- "sec" + i%> data-act=<%- activities[i]['sec'] %>></div>
+        <div id=<%- "dist" + i%> data-act=<%- activities[i]['distance'] %>></div>
         <div id=<%- "hb_ave" + i%> data-act=<%- activities[i]['hb_ave'] %>></div>
         <div id=<%- "hb_max" + i%> data-act=<%- activities[i]['hb_max'] %>></div>
     <% }; %> 
@@ -35,6 +36,7 @@
                           hour: document.getElementById('hour' + i).dataset.act,
                           min: document.getElementById('min' + i).dataset.act,
                           sec: document.getElementById('sec' + i).dataset.act,
+                          dist: document.getElementById('dist' + i).dataset.act,
                           hb_ave: document.getElementById('hb_ave' + i).dataset.act,
                           hb_max: document.getElementById('hb_max' + i).dataset.act})
         };
