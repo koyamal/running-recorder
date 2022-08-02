@@ -13,11 +13,9 @@ var myChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: labels,
-        //labels: ["6/24", "6/25", "6/26"],
         datasets: [{
             label: 'タイム',
             data: times,
-            // data: [25, 26, 27],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
             ],
@@ -31,7 +29,7 @@ var myChart = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero:true
+                    beginAtZero: true
                 }
             }]
         }
