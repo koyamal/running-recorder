@@ -4,8 +4,10 @@ const labels = [];
 const times = [];
 
 for(let i = 0; i < activityList.length; i++){
+    if(activityList[i]['date'] !== '230'){
     labels.push(`${activityList[i]['month']}/${activityList[i]['date']}`);
     times.push((activityList[i]['hour'] * 60 * 60 + activityList[i]['min'] * 60 + activityList[i]['sec'])/activityList[i]['dist']);
+    }
 }
 
 var ctx = document.getElementById("myChart").getContext('2d');
