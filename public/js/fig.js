@@ -5,8 +5,13 @@ const times = [];
 
 for(let i = 0; i < activityList.length; i++){
     if(activityList[i]['date'] !== '230'){
-    labels.push(`${activityList[i]['month']}/${activityList[i]['date']}`);
-    times.push((activityList[i]['hour'] * 60 * 60 + activityList[i]['min'] * 60 + activityList[i]['sec'])/activityList[i]['dist']);
+        const secperkm = (activityList[i]['hour'] * 60 * 60 + activityList[i]['min'] * 60 + activityList[i]['sec'] * 1)/ activityList[i]['dist'];
+        const min = Math.floor(secperkm / 60);
+        const sec = secperkm % 60;
+        const data = min + 0.01 * sec;
+        labels.push(`${activityList[i]['month']}/${activityList[i]['date']}`);
+        times.push(data);
+    // times.push((activityList[i]['hour'] * 60 * 60 + activityList[i]['min'] * 60 + activityList[i]['sec'])/activityList[i]['dist']);
     }
 }
 
