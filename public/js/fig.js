@@ -14,7 +14,10 @@ for(let i = 0; i < activityList.length; i++){
     // times.push((activityList[i]['hour'] * 60 * 60 + activityList[i]['min'] * 60 + activityList[i]['sec'])/activityList[i]['dist']);
     }
 }
-
+times.push(null);
+labels.push('7/19');
+times.push(5.1);
+labels.push('7/20');
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
