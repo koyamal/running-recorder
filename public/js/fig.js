@@ -34,6 +34,7 @@ var myChart = new Chart(ctx, {
             ],
             showLine: false,
             pointRadius: 5,
+            pointHoverRadius: 7,
             borderWidth: 1
         }],
     },
