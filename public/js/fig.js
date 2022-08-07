@@ -33,7 +33,8 @@ var myChart = new Chart(ctx, {
                 'rgba(255,99,132,1)',
             ],
             borderWidth: 1
-        }]
+        }],
+        showLine: false
     },
     options: {
         scales: {
