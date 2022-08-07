@@ -32,9 +32,9 @@ var myChart = new Chart(ctx, {
             borderColor: [
                 'rgba(255,99,132,1)',
             ],
+            showLine: false,
             borderWidth: 1
         }],
-        showLine: false
     },
     options: {
         scales: {
