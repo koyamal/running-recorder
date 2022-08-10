@@ -39,7 +39,8 @@ var myChart = new Chart(ctx, {
                 showLine: false,
                 pointRadius: 5,
                 pointHoverRadius: 7,
-                borderWidth: 1
+                borderWidth: 1,
+                yAxisID: "y-axis-1",
             },
             {
                 label: '心拍数',
@@ -53,17 +54,36 @@ var myChart = new Chart(ctx, {
                 showLine: false,
                 pointRadius: 5,
                 pointHoverRadius: 7,
-                borderWidth: 1
+                borderWidth: 1,
+                yAxisID: "y-axis-2",
             }
         ],
     },
     options: {
+        responsive: true,
         scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
+            yAxes: [
+                {
+                    id: "y-axis-1",
+                    type: "linear",
+                    position: "left",
+                    ticks: {
+                        max: 6,
+                        min: 5,
+                        stepSize: 0.2
+                    }
+                },
+                {
+                    id: "y-axis-2",
+                    type: "linear",
+                    position: "right",
+                    ticks: {
+                        max: 1,
+                        min: 0,
+                        stepSize: 0.2
+                    }
                 }
-            }]
+            ]
         }
     }
 });
