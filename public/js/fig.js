@@ -64,25 +64,45 @@ var myChart = new Chart(ctx, {
         scales: {
             yAxes: [
                 {
-                    id: "y-axis-1",
-                    type: "linear",
-                    position: "left",
+                    id: 'y-axis-1',
+                    display: true,
+                    suggestedMin: 5,
+                    suggestedMax: 6,
+                    beginAtZero: false,
                     ticks: {
-                        max: 6,
-                        min: 5,
-                        stepSize: 0.2
+                      stepSize: 1,
                     }
                 },
                 {
-                    id: "y-axis-2",
-                    type: "linear",
-                    position: "right",
+                    id: 'y-axis-2',
+                    display: true,
+                    suggestedMin: 0,
+                    suggestedMax: 1,
+                    beginAtZero: false,
                     ticks: {
-                        max: 1,
-                        min: 0,
-                        stepSize: 0.2
+                      stepSize: 0.2,
                     }
-                }
+                },
+                // {
+                //     id: "y-axis-1",
+                //     type: "linear",
+                //     position: "left",
+                //     ticks: {
+                //         max: 6,
+                //         min: 5,
+                //         stepSize: 0.2
+                //     }
+                // },
+                // {
+                //     id: "y-axis-2",
+                //     type: "linear",
+                //     position: "right",
+                //     ticks: {
+                //         max: 1,
+                //         min: 0,
+                //         stepSize: 0.2
+                //     }
+                // }
             ]
         }
     }
