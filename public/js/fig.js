@@ -62,27 +62,49 @@ var myChart = new Chart(ctx, {
     options: {
         responsive: true,
         scales: {
-            yAxes: [
-                {
-                    id: 'y-axis-1',
-                    display: true,
-                    suggestedMin: 5,
-                    suggestedMax: 6,
-                    beginAtZero: false,
-                    ticks: {
-                      stepSize: 1,
-                    }
+            'y-axis-1':{
+                type: 'linear',
+                display: true,
+                suggestedMin: 5,
+                suggestedMax: 6,
+                beginAtZero: false,
+                ticks: {
+                  stepSize: 1,
                 },
-                {
-                    id: 'y-axis-2',
-                    display: true,
-                    suggestedMin: 0,
-                    suggestedMax: 1,
-                    beginAtZero: false,
-                    ticks: {
-                      stepSize: 0.2,
-                    }
+                position: 'left'
+            },
+            'y-axis-2':{
+                type: 'linear',
+                display: true,
+                suggestedMin: 0,
+                suggestedMax: 1,
+                beginAtZero: false,
+                ticks: {
+                  stepSize: 0.2,
                 },
+                position: 'right'
+            },
+            // yAxes: [
+            //     {
+            //         id: 'y-axis-1',
+            //         display: true,
+            //         suggestedMin: 5,
+            //         suggestedMax: 6,
+            //         beginAtZero: false,
+            //         ticks: {
+            //           stepSize: 1,
+            //         }
+            //     },
+            //     {
+            //         id: 'y-axis-2',
+            //         display: true,
+            //         suggestedMin: 0,
+            //         suggestedMax: 1,
+            //         beginAtZero: false,
+            //         ticks: {
+            //           stepSize: 0.2,
+            //         }
+            //     },
                 // {
                 //     id: "y-axis-1",
                 //     type: "linear",
@@ -103,7 +125,7 @@ var myChart = new Chart(ctx, {
                 //         stepSize: 0.2
                 //     }
                 // }
-            ]
+            // ]
         }
     }
 });
