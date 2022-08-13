@@ -16,6 +16,23 @@ for(let i = 0; i < activityList.length; i++){
     // times.push((activityList[i]['hour'] * 60 * 60 + activityList[i]['min'] * 60 + activityList[i]['sec'])/activityList[i]['dist']);
     }
 }
+
+const labels02 = [];
+const times02 = [];
+for(let i = 1; i < 31; i++){
+    labels02.push(`6/${i}`);
+    for(let j = 0; j < activityList.length; j++){
+        if(i.toString() === activityList[j]['date']){
+            const secperkm = (activityList[j]['hour'] * 60 * 60 + activityList[j]['min'] * 60 + activityList[j]['sec'] * 1)/ activityList[j]['dist'];
+            const min = Math.floor(secperkm / 60);
+            const sec = Math.floor(secperkm % 60);
+            const data = min + 0.01 * sec;
+            times02.push(data);
+            break;
+        }
+    }
+    times02.push(null);
+}
 times.push(null);
 labels.push('7/19');
 times.push(5.1);
@@ -25,11 +42,13 @@ var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: labels,
+        labels: labels02,
+        // labels: labels,
         datasets: [
             {
                 label: 'タイム',
-                data: times,
+                data: times02,
+                // data: times,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                 ],
