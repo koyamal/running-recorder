@@ -20,6 +20,7 @@ for(let i = 0; i < activityList.length; i++){
 const labels02 = [];
 const times02 = [];
 for(let i = 1; i < 31; i++){
+    let jd = true;
     labels02.push(`6/${i}`);
     for(let j = 0; j < activityList.length; j++){
         if(i.toString() === activityList[j]['date']){
@@ -28,10 +29,13 @@ for(let i = 1; i < 31; i++){
             const sec = Math.floor(secperkm % 60);
             const data = min + 0.01 * sec;
             times02.push(data);
+            jd = false;
             break;
         }
     }
-    times02.push(null);
+    if(jd){
+        times02.push(null);
+    }
 }
 times.push(null);
 labels.push('7/19');
