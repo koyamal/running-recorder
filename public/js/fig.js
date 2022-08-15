@@ -12,7 +12,6 @@ for(let i = 0; i < activityList.length; i++){
         const data = min + 0.01 * sec;
         labels.push(`${activityList[i]['month']}/${activityList[i]['date']}`);
         times.push(data);
-        beats.push(activityList[i]['hb_ave']);
     // times.push((activityList[i]['hour'] * 60 * 60 + activityList[i]['min'] * 60 + activityList[i]['sec'])/activityList[i]['dist']);
     }
 }
@@ -37,11 +36,7 @@ for(let i = 1; i < 31; i++){
         times02.push(null);
     }
 }
-times.push(null);
-labels.push('7/19');
-times.push(5.1);
-beats.push(0.2);
-labels.push('7/20');
+
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
