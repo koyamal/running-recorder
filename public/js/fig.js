@@ -102,48 +102,6 @@ var myChart = new Chart(ctx, {
                 },
                 position: 'right'
             },
-            // yAxes: [
-            //     {
-            //         id: 'y-axis-1',
-            //         display: true,
-            //         suggestedMin: 5,
-            //         suggestedMax: 6,
-            //         beginAtZero: false,
-            //         ticks: {
-            //           stepSize: 1,
-            //         }
-            //     },
-            //     {
-            //         id: 'y-axis-2',
-            //         display: true,
-            //         suggestedMin: 0,
-            //         suggestedMax: 1,
-            //         beginAtZero: false,
-            //         ticks: {
-            //           stepSize: 0.2,
-            //         }
-            //     },
-                // {
-                //     id: "y-axis-1",
-                //     type: "linear",
-                //     position: "left",
-                //     ticks: {
-                //         max: 6,
-                //         min: 5,
-                //         stepSize: 0.2
-                //     }
-                // },
-                // {
-                //     id: "y-axis-2",
-                //     type: "linear",
-                //     position: "right",
-                //     ticks: {
-                //         max: 1,
-                //         min: 0,
-                //         stepSize: 0.2
-                //     }
-                // }
-            // ]
         }
     }
 });
