@@ -12,7 +12,6 @@ for(let i = 0; i < activityList.length; i++){
         const data = min + 0.01 * sec;
         labels.push(`${activityList[i]['month']}/${activityList[i]['date']}`);
         times.push(data);
-    // times.push((activityList[i]['hour'] * 60 * 60 + activityList[i]['min'] * 60 + activityList[i]['sec'])/activityList[i]['dist']);
     }
 }
 
@@ -42,12 +41,10 @@ var myChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: labels02,
-        // labels: labels,
         datasets: [
             {
                 label: 'タイム',
                 data: times02,
-                // data: times,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                 ],
@@ -101,7 +98,7 @@ var myChart = new Chart(ctx, {
                   stepSize: 0.2,
                 },
                 position: 'right'
-            },
+            }
         }
     }
 });
