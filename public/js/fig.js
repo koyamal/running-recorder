@@ -1,5 +1,3 @@
-console.log('hello');
-console.log(activityList);
 const labels = [];
 const times = [];
 const beats = [];
