@@ -53,7 +53,7 @@ app.post('/datainput', (req, res) =>{
     connection.query(
         'INSERT INTO activities (date, distance, hour, min, sec, hb_ave, hb_max) values (?, ?, ?, ?, ?, ?, ?)',
         [date, distance, hour, min, sec, hb_ave, hb_max],
-        (error, results) =>{
+        (error, results) => {
           if(error){
             console.log(error);
           }
@@ -73,7 +73,7 @@ app.get('/showdata', (req, res) =>{
           }
           console.log(results);
           // console.log(results[0]['id']);
-          res.render('showactivities.ejs', {results: results});
+          res.render('showactivities.ejs', {results});
         }
     );
 })
