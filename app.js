@@ -54,9 +54,11 @@ app.post('/datainput', (req, res) =>{
         'INSERT INTO activities (date, distance, hour, min, sec, hb_ave, hb_max) values (?, ?, ?, ?, ?, ?, ?)',
         [date, distance, hour, min, sec, hb_ave, hb_max],
         (error, results) =>{
-            console.log(results);
+          if(error){
             console.log(error);
-            res.redirect('/');
+          }
+          console.log(results);
+          res.redirect('/');
           }
     );
 });
@@ -66,9 +68,12 @@ app.get('/showdata', (req, res) =>{
         'SELECT * FROM activities',
         [],
         (error, results) =>{
-            console.log(results);
-            // console.log(results[0]['id']);
-            res.render('showactivities.ejs', {results: results});
+          if(error){
+            console.log(error);
+          }
+          console.log(results);
+          // console.log(results[0]['id']);
+          res.render('showactivities.ejs', {results: results});
         }
     );
 })
